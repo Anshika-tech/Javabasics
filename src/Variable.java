@@ -6,15 +6,15 @@
  constructor or block but it declares with static modifier.
  */
 public class Variable {
-    int a=10;
-    static int c=30;
+    int a=10;  //instance variable
+    static int c=30;  //static variable
     public static void main(String[] args) {
-        int b=20;
+        int b=20;  //local variable
         Variable obj=new Variable();
         System.out.println("instance Variable="+obj.a);
         System.out.println("local variable="+b);
         System.out.println("static variable ="+c);
-    }
 
+    }
 
 }
