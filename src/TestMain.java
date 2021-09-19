@@ -6,6 +6,13 @@ object- An object is a collection of data members and associated member function
 class Test{
     int a; //instance variable
     String name; //instance variable
+    void eat(){// method or function
+        System.out.println(name+" is eating");
+    }
+    void walk(){
+        System.out.println(name + " is walking");
+    }
+
 }
 public class TestMain {
     public static void main(String[] args) {
@@ -14,9 +21,12 @@ public class TestMain {
         obj1.name= "Anshika";
         Test obj2=new Test();
         obj2.a=20;
-        obj2.name="WELCOME to JAVA TUTORIALS";
+        obj2.name="hritik";
         System.out.println(obj1.a+" "+obj1.name);
         System.out.println(obj2.a+" "+obj2.name);
+        obj1.eat(); //method call
+        obj2.walk();
+
     }
 
 }
