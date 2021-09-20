@@ -55,7 +55,7 @@ public class Practice {
     }
 }*/
 //q3. create a class name Box ,and use parameterized constructor to initialize the variable length ,width,height and use method to return volume.
-import java.util.*;
+/*import java.util.*;
 class Box{
     int length;
     int width;
@@ -74,5 +74,24 @@ public class Practice{
         Scanner sc= new Scanner(System.in);
         Box obj= new Box(sc.nextInt(),sc.nextInt(),sc.nextInt());
         obj.display();
+    }
+}*/
+class Student {
+    String name;
+    double percentage;
+}
+class Test1{
+    Student obj;
+    Test1(String a,double p){
+        obj= new Student();
+        obj.name=a;
+        obj.percentage=p;
+    }
+}
+public class Practice{
+    public static void main(String[] args) {
+        Test1 obj1=new Test1("anshika",91.7);
+        System.out.println(obj1.obj.name);
+        System.out.println(obj1.obj.percentage);
     }
 }
