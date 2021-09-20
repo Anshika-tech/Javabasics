@@ -29,7 +29,7 @@ public class Practice{
         obj4.show();
         obj5.show();
     }
-}*/
+}
 //q2.class of book contain book'sname,author name ,price etc.
 class Book{
     String name;
@@ -52,5 +52,27 @@ public class Practice {
     public static void main(String[] args) {
         Book obj =new Book("let us c++","yashwant kanetkar",350.0,16);
         obj.show();
+    }
+}*/
+//q3. create a class name Box ,and use parameterized constructor to initialize the variable length ,width,height and use method to return volume.
+import java.util.*;
+class Box{
+    int length;
+    int width;
+    int height;
+    Box(int l,int w,int h)
+    {  length=l;
+        width=w;
+        height=h;
+    }
+    void display(){
+        System.out.println("volume ="+(length*width*height));
+    }
+}
+public class Practice{
+    public static void main(String[] args) {
+        Scanner sc= new Scanner(System.in);
+        Box obj= new Box(sc.nextInt(),sc.nextInt(),sc.nextInt());
+        obj.display();
     }
 }
