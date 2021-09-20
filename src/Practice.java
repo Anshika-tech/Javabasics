@@ -76,6 +76,8 @@ public class Practice{
         obj.display();
     }
 }*/
+//q4. create a class name student having name and percentage and another class Test1 that contains instance of student class.print output name
+// and percentage
 class Student {
     String name;
     double percentage;
