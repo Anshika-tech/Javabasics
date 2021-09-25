@@ -18,7 +18,7 @@ public class ArrayMain {
     }
 }*/
 //q2.find max value in array.
-import java.util.Scanner;
+/*import java.util.Scanner;
 public class ArrayMain{
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
@@ -36,4 +36,27 @@ public class ArrayMain{
         }
         System.out.println("maximum value in array="+m);
     }
+}*/
+//array of object.
+//q3.print roll no and name of the student store in array.
+import java.util.Scanner;
+class stu2{
+    int roll;
+    String name;
+}
+public class ArrayMain{
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        stu2 a[] = new stu2[sc.nextInt()];// declaration of object of array.
+        for(int i=0;i<a.length;i++) {
+            a[i]=new stu2();
+            System.out.println("enter the roll no and name of student");
+            a[i].roll=sc.nextInt();
+            a[i].name=sc.next();
+        }
+        for (int i=0;i<a.length;i++) {
+            System.out.println("roll no ="+a[i].roll+"  ,"+"name of student="+a[i].name);
+        }
+    }
+
 }
