@@ -78,7 +78,7 @@ public class Practice{
 }*/
 //q4. create a class name student having name and percentage and another class Test1 that contains instance of student class.print output name
 // and percentage
-class Student {
+/*class Student {
     String name;
     double percentage;
 }
@@ -95,5 +95,23 @@ public class Practice{
         Test1 obj1=new Test1("anshika",91.7);
         System.out.println(obj1.obj.name);
         System.out.println(obj1.obj.percentage);
+    }
+}*/
+//q5.check whether a no. is palindrome or not.
+import java.util.Scanner;
+public class Practice{
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int  n=sc.nextInt();
+          int t=n,r,s=0;
+          while(t>0){
+              r=t%10;
+              s=r+s*10;
+              t=t/10;
+          }
+         if(n==s)
+             System.out.println("palindrome");
+         else
+             System.out.println("not palindrome");
     }
 }
