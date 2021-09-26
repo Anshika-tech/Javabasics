@@ -96,7 +96,7 @@ public class Practice{
         System.out.println(obj1.obj.name);
         System.out.println(obj1.obj.percentage);
     }
-}*/
+}
 //q5.check whether a no. is palindrome or not.
 import java.util.Scanner;
 public class Practice{
@@ -114,4 +114,4 @@ public class Practice{
          else
              System.out.println("not palindrome");
     }
-}
+}*/
