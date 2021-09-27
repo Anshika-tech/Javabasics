@@ -1,5 +1,5 @@
-//q1. print sum of array .
-/*import java.util.Scanner;
+/*q1. print sum of array .
+import java.util.Scanner;
 public class ArrayMain {
     public static void main(String args[]) {
         Scanner sc=new Scanner(System.in);
@@ -16,9 +16,9 @@ public class ArrayMain {
         }
         System.out.println("sum of array is ="+s);
     }
-}*/
+}
 //q2.find max value in array.
-/*import java.util.Scanner;
+import java.util.Scanner;
 public class ArrayMain{
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
@@ -36,7 +36,7 @@ public class ArrayMain{
         }
         System.out.println("maximum value in array="+m);
     }
-}*/
+}
 //array of object.
 //q3.print roll no and name of the student store in array.
 import java.util.Scanner;
@@ -60,3 +60,50 @@ public class ArrayMain{
     }
 
 }
+//search element in an array.
+import java.util.Arrays;
+import java.util.Scanner;
+public class ArrayMain{
+    public static void main(String[] args) {
+       Scanner sc=new Scanner(System.in);
+        System.out.println("enter the no. that you want to search");
+       int element=sc.nextInt();
+        System.out.println("enter the size of array.");
+       int[] arr =new int[sc.nextInt()];
+        System.out.println("enter the elements of array");
+       for(int i=0;i<arr.length;i++) {
+           arr[i]=sc.nextInt();
+       }
+        Arrays.sort(arr);
+       int lo=0,hi=arr.length-1,mid;
+       while(hi-lo>1) {
+            mid=(hi+lo)/2;
+            if(element>arr[mid])
+                lo=mid+1;
+            else
+                hi=mid;
+       }
+       if(element==arr[lo])
+           System.out.println("element found in "+lo+"index");
+       else if(element==arr[hi])
+           System.out.println("element found in "+hi+"index");
+       else
+           System.out.println("-1");
+    }
+}*/
+//initialize integer array with ascii value and print character value in single row.
+import java.util.Scanner;
+public class ArrayMain{
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int[] arr=new int[sc.nextInt()];
+        for(int i=0;i<arr.length;i++){
+            arr[i]= sc.nextInt();
+        }
+        for(int i:arr)
+        {
+            System.out.print((char)(i)+ " ");
+        }
+    }
+}
+
