@@ -60,7 +60,7 @@ public class ArrayMain{
     }
 
 }
-//search element in an array.
+//q4.search element in an array.
 import java.util.Arrays;
 import java.util.Scanner;
 public class ArrayMain{
@@ -90,8 +90,8 @@ public class ArrayMain{
        else
            System.out.println("-1");
     }
-}*/
-//initialize integer array with ascii value and print character value in single row.
+}
+//q5.initialize integer array with ascii value and print character value in single row.
 import java.util.Scanner;
 public class ArrayMain{
     public static void main(String[] args) {
@@ -105,5 +105,28 @@ public class ArrayMain{
             System.out.print((char)(i)+ " ");
         }
     }
+}*/
+//q6.create an array of int type and if element is 1 or 4 then print true otherwise print false.
+import java.util.Scanner;
+public class ArrayMain{
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt(),f=0;
+        int[] arr=new int[n];
+        for(int i=0;i<n;i++) {
+            arr[i] = sc.nextInt();
+        }
+        for(int i:arr){
+            if(i==4 || i==1){
+                f=1;
+            }
+            else {
+                f=0;
+                System.out.println("False");
+                break;
+            }
+        }
+        if(f==1)
+            System.out.println("True");
+    }
 }
-
