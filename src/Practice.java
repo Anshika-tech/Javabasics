@@ -115,3 +115,36 @@ public class Practice{
              System.out.println("not palindrome");
     }
 }*/
+//create a class contains name ,weight,height and print it.
+import java.util.Scanner;
+class STU2 {
+    String name;
+    double weight;
+    double height;
+    STU2() {
+        Scanner in = new Scanner(System.in);
+        System.out.println("Enter your name: ");
+        name = in.nextLine();
+
+        System.out.println("Enter your weight: ");
+        weight = in.nextDouble();
+
+        System.out.println("Enter your height: ");
+        height = in.nextDouble();
+    }
+    void BMI() {
+        double bmi;
+        bmi = (weight / (height * height)) * 703;
+        System.out.println("You entered string " + name);
+        System.out.println("Your weight is " + weight);
+        System.out.println("Your height is " + height);
+        System.out.println("Your bmi is " + bmi);
+    }
+}
+public class Practice{
+    public static void main(String[] args) {
+        STU2 obj=new STU2();
+        obj.BMI();
+    }
+}
+
