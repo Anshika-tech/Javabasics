@@ -105,7 +105,7 @@ public class ArrayMain{
             System.out.print((char)(i)+ " ");
         }
     }
-}*/
+}
 //q6.create an array of int type and if element is 1 or 4 then print true otherwise print false.
 import java.util.Scanner;
 public class ArrayMain{
@@ -128,5 +128,50 @@ public class ArrayMain{
         }
         if(f==1)
             System.out.println("True");
+    }
+}*/
+//array of objects.
+/*q7.create array of objects storing id,employee name,company name A and B,salary .if salary of two employee
+is different in same company print maximum salary.*/
+import java.util.Scanner;
+class Employee {
+    int id;
+    String name;
+    String c_name;
+    int sal;
+    public Employee(String c_name, String name, int id, int sal) {
+        this.c_name = c_name;
+        this.name = name;
+        this.id = id;
+        this.sal = sal;
+    }
+    public static void result(Employee tarr[]) {
+        int max_sal1 = Integer.MIN_VALUE, max_sal2 = Integer.MIN_VALUE;
+        int Aindex = 0, Bindex = 0;
+        for (int i = 0; i < tarr.length; i++) {
+            if (tarr[i].c_name.equals("A") && tarr[i].sal > max_sal1) {
+                max_sal1 = tarr[i].sal;
+                Aindex = i;
+            }
+            if (tarr[i].c_name.equals("B") && tarr[i].sal > max_sal2) {
+                max_sal2 = tarr[i].sal;
+                Bindex = i;
+            }
+        }
+        System.out.println("employee name= " + tarr[Bindex].name + ",sal= " + tarr[Bindex].sal + ",company name= " + tarr[Bindex].c_name);
+        System.out.println("employee name= " + tarr[Aindex].name + ",sal= " + tarr[Aindex].sal + ",company name= " + tarr[Aindex].c_name);
+    }
+}
+public class ArrayMain {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("enter the no of object");
+        int size = sc.nextInt();
+        Employee arr[] = new Employee[size];
+        for (int i = 0; i < arr.length; i++) {
+            System.out.println("enter company_name, employee_name,id,salary");
+            arr[i] = new Employee(sc.next(), sc.next(), sc.nextInt(), sc.nextInt());
+        }
+        Employee.result(arr);
     }
 }
