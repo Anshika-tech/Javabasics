@@ -114,7 +114,7 @@ public class Practice{
          else
              System.out.println("not palindrome");
     }
-}*/
+}
 //create a class contains name ,weight,height and print it.
 import java.util.Scanner;
 class STU2 {
@@ -145,6 +145,39 @@ public class Practice{
     public static void main(String[] args) {
         STU2 obj=new STU2();
         obj.BMI();
+    }
+}*/
+//count no of instance of class .
+class Count{
+    int num1;
+    int num2;
+    static int  c=0;
+    //instance block always execute first before constructor when object created .
+    {
+        c++;
+    }
+    public Count(){
+        num1=10;
+        num2=20;
+    }
+    public Count(int ta,int tb){
+        num1=ta;
+        num2=tb;
+    }
+    void result(){
+        System.out.println(num1);
+        System.out.println(num2);
+    }
+}
+public class Practice {
+    public static void main(String[] args) {
+        Count obj1=new Count();
+        Count obj2=new Count(30,40);
+        Count obj3=new Count(50,76);
+         obj1.result();
+         obj2.result();
+         obj3.result();
+        System.out.println(Count.c);//static variable always access by the name of class.
     }
 }
 
