@@ -146,7 +146,7 @@ public class Practice{
         STU2 obj=new STU2();
         obj.BMI();
     }
-}*/
+}
 //count no of instance of class .
 class Count{
     int num1;
@@ -178,6 +178,45 @@ public class Practice {
          obj2.result();
          obj3.result();
         System.out.println(Count.c);//static variable always access by the name of class.
+    }
+}*/
+//create a class contains private member and access them .
+//note- we can access private member by using method getter setter.
+import java.util.Scanner;
+class Out{
+    private int x;
+    private int y;
+    public int getX() {
+        return x;
+    }
+    public void setX(int x) {
+        this.x = x;
+    }
+    public int getY() {
+        return y;
+    }
+
+    public void setY(int y) {
+        this.y = y;
+    }
+    public int getXY(){
+        return x*y;
+    }
+    public void setXY(int x,int y){
+        this.x=x;
+        this.y=y;
+    }
+}
+public class Practice{
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        Out obj=new Out();
+        obj.setX(sc.nextInt());
+        System.out.println(obj.getX());
+        obj.setXY(sc.nextInt(),sc.nextInt());
+        System.out.println(obj.getXY());
+        obj.setY(sc.nextInt());
+        System.out.println(obj.getY());
     }
 }
 
