@@ -34,7 +34,7 @@ public class Interface{
         obj.draw();
         obj1.draw();
     }
-}*/
+}
 //q2.Bank example
 interface Bank{
     float RateOfInterest();
@@ -55,5 +55,26 @@ public class Interface{
         System.out.println("ROI: "+obj.RateOfInterest());
         Bank obj1=new PNB();
         System.out.println("ROI: "+obj1.RateOfInterest());
+    }
+}*/
+//multiple inheritance by interface
+interface printable{
+    void print();
+}
+interface showable{
+    void show();
+}
+class Inheritance implements printable,showable{
+    public void print(){
+        System.out.println("print love");
+    }
+    public void show()
+    {
+        System.out.println("show love");
+    }
+    public static void main(String[] args) {
+       Inheritance obj=new Inheritance();
+       obj.print();
+       obj.show();
     }
 }
