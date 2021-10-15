@@ -16,8 +16,6 @@ public class Abstraction {
       obj.run();
     }
 }
-
- */
 //create  abstract class shape and subclasses rectangle and circle.
 import java.util.Scanner;
 abstract class Shape{
@@ -40,5 +38,27 @@ public class Abstraction{
         Shape obj1=new Circle();
         obj.run();
         obj1.run();
+    }
+}*/
+//abstract class having constructor ,data member,methods.
+abstract class Bike{
+    Bike(){
+        System.out.println("bike is created");
+    }
+    abstract void run();
+    void changegear(){
+        System.out.println("change gear");
+    }
+}
+class Honda extends Bike{
+    void run(){
+        System.out.println("running safely");
+    }
+}
+public class Abstraction{
+    public static void main(String[] args) {
+        Bike obj=new Honda();
+         obj.run();
+         obj.changegear();
     }
 }
