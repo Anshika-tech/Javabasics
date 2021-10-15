@@ -12,8 +12,8 @@ class Interface implements Printable{
         Interface obj=new Interface();
         obj.print();
     }
-}*/
-//q drawable example.
+}
+//q1. drawable example.
 interface Shape{
     void draw();
 }
@@ -33,5 +33,27 @@ public class Interface{
         Shape obj1=new Circle();
         obj.draw();
         obj1.draw();
+    }
+}*/
+//q2.Bank example
+interface Bank{
+    float RateOfInterest();
+}
+class SBI implements Bank{
+    public float RateOfInterest(){
+        return 9.17f;
+    }
+}
+class PNB implements Bank{
+    public float RateOfInterest(){
+        return 9.6f;
+    }
+}
+public class Interface{
+    public static void main(String[] args) {
+        Bank obj=new SBI();
+        System.out.println("ROI: "+obj.RateOfInterest());
+        Bank obj1=new PNB();
+        System.out.println("ROI: "+obj1.RateOfInterest());
     }
 }
