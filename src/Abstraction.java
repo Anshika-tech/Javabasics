@@ -16,7 +16,9 @@ public class Abstraction {
       obj.run();
     }
 }
-*/
+
+ */
+//create  abstract class shape and subclasses rectangle and circle.
 import java.util.Scanner;
 abstract class Shape{
      abstract void run();
