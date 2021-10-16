@@ -97,7 +97,7 @@ class Interface implements showable{
         obj.print();
         obj.show();
     }
-}*/
+}
 // default method in java. you can define body of a method in interface by using default method.
 interface Bike{
     void fun();
@@ -115,5 +115,28 @@ class Interface{
         Bike obj=new Honda();
         obj.run();
         obj.fun();
+    }
+}*/
+//static method in interface.
+import java.util.Scanner;
+interface Drawable{
+    void draw();
+    static int cube(int x){
+        return x*x*x;
+    }
+}
+class Area implements Drawable{
+    public void draw(){
+        System.out.println("draw a cube of area");
+    }
+}
+class Interface {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        Drawable obj=new Area();
+        System.out.println("enter the side of cube");
+        int n=sc.nextInt();
+        obj.draw();
+        System.out.println(Drawable.cube(n));
     }
 }
