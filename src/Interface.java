@@ -56,7 +56,7 @@ public class Interface{
         Bank obj1=new PNB();
         System.out.println("ROI: "+obj1.RateOfInterest());
     }
-}*/
+}
 //multiple inheritance by interface
 interface printable{
     void print();
@@ -76,5 +76,25 @@ class Inheritance implements printable,showable{
        Inheritance obj=new Inheritance();
        obj.print();
        obj.show();
+    }
+}*/
+//interface inheritance
+interface printable{
+    void print();
+}
+interface showable extends printable{
+    void show();
+}
+class Interface implements showable{
+    public void print(){
+        System.out.println("print");
+    }
+    public void show(){
+        System.out.println("show");
+    }
+    public static void main(String[] args) {
+        Interface obj=new Interface();
+        obj.print();
+        obj.show();
     }
 }
