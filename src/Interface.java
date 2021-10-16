@@ -77,7 +77,7 @@ class Inheritance implements printable,showable{
        obj.print();
        obj.show();
     }
-}*/
+}
 //interface inheritance
 interface printable{
     void print();
@@ -96,5 +96,24 @@ class Interface implements showable{
         Interface obj=new Interface();
         obj.print();
         obj.show();
+    }
+}*/
+// default method in java. you can define body of a method in interface by using default method.
+interface Bike{
+    void fun();
+   default void run(){
+       System.out.println("bike is ready");
+    }
+}
+class Honda implements Bike{
+    public void fun(){
+        System.out.println("have fun");
+    }
+}
+class Interface{
+    public static void main(String[] args) {
+        Bike obj=new Honda();
+        obj.run();
+        obj.fun();
     }
 }
