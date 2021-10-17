@@ -232,7 +232,7 @@ public class Practice{
         Arithmetic obj = new Arithmetic();
         obj.square();
     }
-}*/
+}
 // create outer class and inside outer class create inner class. create main class and call outer and inner method.
 class Outer{
     static int a=20;
@@ -250,5 +250,26 @@ class Practice{
     public static void main(String[] args) {
         Outer.m1();
         Outer.inner.m2();
+    }
+}*/
+// above question but without using static keyword.
+class Outer{
+    public int a=20;
+    public void m1(){
+        System.out.println("enter in outer class "+a);
+    }
+    class inner{
+         public int b=30;
+        public void m2(){
+            System.out.println("enter in inner class "+b);
+        }
+    }
+}
+class Practice {
+    public static void main(String[] args) {
+        Outer obj=new Outer();
+        obj.m1();
+        Outer.inner obj2= obj.new inner();
+        obj2.m2();
     }
 }
