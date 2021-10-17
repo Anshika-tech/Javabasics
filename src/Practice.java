@@ -179,7 +179,7 @@ public class Practice {
          obj3.result();
         System.out.println(Count.c);//static variable always access by the name of class.
     }
-}*/
+}
 //create a class contains private member and access them .
 //note- we can access private member by using method getter setter.
 import java.util.Scanner;
@@ -195,7 +195,6 @@ class Out{
     public int getY() {
         return y;
     }
-
     public void setY(int y) {
         this.y = y;
     }
@@ -218,5 +217,19 @@ public class Practice{
         obj.setY(sc.nextInt());
         System.out.println(obj.getY());
     }
+}*/
+// create interface name test contain member function square .Implement this interface in Arithmetic class.
+interface Test5{
+    void square();
 }
-
+class Arithmetic implements Test5{
+    public void square(){
+        System.out.println(2*2);
+    }
+}
+public class Practice{
+    public static void main(String[] args) {
+        Arithmetic obj = new Arithmetic();
+        obj.square();
+    }
+}
