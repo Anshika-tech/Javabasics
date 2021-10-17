@@ -217,7 +217,7 @@ public class Practice{
         obj.setY(sc.nextInt());
         System.out.println(obj.getY());
     }
-}*/
+}
 // create interface name test contain member function square .Implement this interface in Arithmetic class.
 interface Test5{
     void square();
@@ -231,5 +231,24 @@ public class Practice{
     public static void main(String[] args) {
         Arithmetic obj = new Arithmetic();
         obj.square();
+    }
+}*/
+// create outer class and inside outer class create inner class. create main class and call outer and inner method.
+class Outer{
+    static int a=20;
+     public static void m1(){
+        System.out.println("enter in outer class "+a);
+    }
+    class inner{
+        static int b=30;
+        public static void m2(){
+            System.out.println("enter in inner class "+b);
+        }
+    }
+}
+class Practice{
+    public static void main(String[] args) {
+        Outer.m1();
+        Outer.inner.m2();
     }
 }
