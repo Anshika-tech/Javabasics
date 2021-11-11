@@ -251,7 +251,7 @@ class Practice{
         Outer.m1();
         Outer.inner.m2();
     }
-}*/
+}
 // above question but without using static keyword.
 class Outer{
     public int a=20;
@@ -271,5 +271,32 @@ class Practice {
         obj.m1();
         Outer.inner obj2= obj.new inner();
         obj2.m2();
+    }
+}*/
+// create class and methods that perform specific task.
+import java.util.Scanner;
+public class Practice{
+    public void registeraccount(int age){
+        if(age>12){
+            System.out.println("you have successfully registered under an Adult account");
+        }
+        else if(age<12){
+            System.out.println("sorry! age must be greater than 12 to register as an adult");
+        }
+    }
+    public void requestbook(String booktype){
+        if(booktype.equals("Fiction")){
+            System.out.println("Book issued successfully .please return book within 7 days.");
+        }
+        else
+            System.out.println("Oops! you are allowed to take only adult Fiction book");
+    }
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        Practice obj=new Practice();
+        System.out.println("enter age ");
+        obj.registeraccount(sc.nextInt());
+        System.out.println("enter book type");
+        obj.requestbook(sc.next());
     }
 }
