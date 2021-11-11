@@ -30,7 +30,7 @@ class programmer extends Employee{
         System.out.println(obj.salary);
         System.out.println(obj.bonus);
     }
-}*/
+}
 //create one parent class and subclass and then create two classes, one inherit parent class and other inherit
 //subclass.
 import java.util.Scanner;
@@ -65,4 +65,43 @@ public class Inheritance{
         obj1.m1();
         obj1.run(sc.nextInt(),sc.next());
     }
+}*/
+//q create a parent class Fruit and two subclass of two fruits that describe the details like
+//name ,taste,size of that fruit.
+import java.util.Scanner;
+class Fruit{
+    String name;
+    String taste;
+    int size;
+    public Fruit(String name,String taste,int size) {
+        this.name = name;
+        this.taste=taste;
+        this.size=size;
+    }
 }
+class Apple extends Fruit{
+    Apple(String name,String taste,int size) {
+      super(name,taste,size);
+    }
+    void eat(){
+        System.out.println(name+ " "+taste+" "+size);
+    }
+}
+class Orange extends Fruit{
+     Orange(String name, String taste, int size) {
+        super(name, taste, size);
+    }
+    void eat(){
+        System.out.println(name+" "+taste+" "+size);
+    }
+}
+public class Inheritance{
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        Apple obj=new Apple(sc.next(),sc.next(),sc.nextInt());
+        obj.eat();
+        Orange obj1=new Orange(sc.next(),sc.next(),sc.nextInt());
+        obj1.eat();
+    }
+}
+
