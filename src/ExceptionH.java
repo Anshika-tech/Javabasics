@@ -51,7 +51,7 @@ public class ExceptionH{
             System.out.println("Enter input is not valid format for an integer.");
         }
     }
-}*/
+}
 //custom Exception
 import java.util.Scanner;
 class InvalidAgeException extends Exception{
@@ -75,5 +75,25 @@ public class ExceptionH{
             System.out.println("exception occurred : "+e);
         }
         System.out.println("hello");
+    }
+}*/
+// input array size and its element .print element of any index .if exception generate handle it with try and catch and print name of exception.
+import java.util.Scanner;
+public class ExceptionH{
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("enter size of array");
+        int a[]=new int[sc.nextInt()];
+        System.out.println("enter the elements of array");
+        for(int i=0;i<a.length;i++){
+            a[i]=sc.nextInt();
+        }
+        System.out.println("enter the index");
+        int n=sc.nextInt();
+        try{
+            System.out.println(a[n]);
+        }catch(ArrayIndexOutOfBoundsException obj){
+            System.out.println("exception :"+obj);
+        }
     }
 }
