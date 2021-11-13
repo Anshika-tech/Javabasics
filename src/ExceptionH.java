@@ -97,7 +97,7 @@ public class ExceptionH{
         }
     }
 }
-quiz -
+quiz - 1.Is code correct or not.
 public class ExceptionH{
     public static void main(String[] args) {
         try{
@@ -110,4 +110,18 @@ public class ExceptionH{
         }
         System.out.println("hello");
     }
-}*/
+}
+//2. Is code correct or not.
+public class ExceptionH{
+    public static void main(String[] args) {
+       try {
+           int i = Integer.parseInt(args[0]);
+           System.out.println(i);
+       }// generate error as try without catch or finally.
+        System.out.println("main method");
+       catch(NumberFormatException e){
+            System.out.println("exception"+e);
+        }
+    }
+}
+code is not correct.*/
