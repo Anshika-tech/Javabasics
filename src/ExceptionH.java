@@ -76,7 +76,7 @@ public class ExceptionH{
         }
         System.out.println("hello");
     }
-}*/
+}
 // input array size and its element .print element of any index .if exception generate handle it with try and catch and print name of exception.
 import java.util.Scanner;
 public class ExceptionH{
@@ -97,3 +97,17 @@ public class ExceptionH{
         }
     }
 }
+quiz -
+public class ExceptionH{
+    public static void main(String[] args) {
+        try{
+            System.out.println(10/0);
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+        catch(ArithmeticException e){//it produces error because arithmetic exception already caught in Exception class .
+            e.printStackTrace();
+        }
+        System.out.println("hello");
+    }
+}*/
