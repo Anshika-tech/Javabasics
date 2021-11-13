@@ -1,14 +1,14 @@
 //Exception handling- mechanism to handle the runtime errors so that the normal flow of the application can be maintained.
 //without exception handling-
 /*
-public class Exception {
+public class ExceptionH {
     public static void main(String[] args) {
            int a=10;
         System.out.println(a/0);//generate exception named arithmetic exception.
     }
 }
 //using exception handling-
-public class Exception {
+public class ExceptionH {
     public static void main(String[] args) {
         int a=10;
         try {
@@ -22,7 +22,7 @@ public class Exception {
 //Multiple catch block to handle multiple exception
 import java.util.InputMismatchException;
 import java.util.Scanner;
-public class Exception{
+public class ExceptionH{
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
         int a,b;
@@ -38,9 +38,9 @@ public class Exception{
             System.out.println("only numbers are accepted");
         }
     }
-}*/
+}
 import java.util.Scanner;
-public class Exception{
+public class ExceptionH{
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
         try {
@@ -50,5 +50,30 @@ public class Exception{
         }catch(NumberFormatException e){
             System.out.println("Enter input is not valid format for an integer.");
         }
+    }
+}*/
+//custom Exception
+import java.util.Scanner;
+class InvalidAgeException extends Exception{
+    InvalidAgeException(String s){
+        super(s);
+    }
+}
+public class ExceptionH{
+    static void validate(int age)throws InvalidAgeException{
+        if(age<18)
+            throw new InvalidAgeException("not valid");
+        else
+            System.out.println("welcome to vote");
+    }
+
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        try{
+            validate(sc.nextInt());
+        }catch(InvalidAgeException e){
+            System.out.println("exception occurred : "+e);
+        }
+        System.out.println("hello");
     }
 }
