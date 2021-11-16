@@ -194,7 +194,7 @@ public class ExceptionH{
          obj.n();
         System.out.println("end of main method");
     }
-}*/
+}
 //2. Example-
 class Test{
     void m1()throws InterruptedException{
@@ -209,5 +209,18 @@ public class ExceptionH{
         Test obj=new Test();
         obj.m1();
         System.out.println("hello");
+    }
+}*/
+//Try with resource concept-
+// try statement that declares one or more resources.
+import java.util.Scanner;
+public class ExceptionH{
+    public static void main(String[] args) {
+       try(Scanner sc=new Scanner(System.in)){
+          int i=Integer.parseInt(sc.next());
+       }catch(Exception obj){
+           obj.printStackTrace();
+       }
+        System.out.println("end of main method");
     }
 }
