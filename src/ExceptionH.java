@@ -170,7 +170,7 @@ public class ExceptionH{
             System.out.println("My Exception caught");
         }
     }
-}*/
+}
 //throws keyword -The Java throws keyword is used to declare an exception.
 // It gives an information to the programmer that there may occur an exception. only applicable on checked exception.
 class Testthrow{
@@ -193,5 +193,21 @@ public class ExceptionH{
         Testthrow obj=new Testthrow();
          obj.n();
         System.out.println("end of main method");
+    }
+}*/
+//2. Example-
+class Test{
+    void m1()throws InterruptedException{
+        m2();
+    }
+    void m2()throws InterruptedException{
+        Thread.sleep(1000);
+    }
+}
+public class ExceptionH{
+    public static void main(String[] args)throws InterruptedException {
+        Test obj=new Test();
+        obj.m1();
+        System.out.println("hello");
     }
 }
