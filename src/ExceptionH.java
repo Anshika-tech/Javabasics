@@ -125,3 +125,46 @@ public class ExceptionH{
     }
 }
 code is not correct.*/
+//q. enter the marks of student and caught the Number Format exception ,if comes, with try and catch block.Also create a custom exception
+//for handling the marks less than 0 and greater than 100.
+import java.util.Scanner;
+class MYException extends Exception{
+    MYException(String s){
+        super(s);
+    }
+}
+public class ExceptionH{
+    static void Invalid(int num)throws MYException{
+            throw new MYException("invalid number");
+    }
+    public static void main(String[] args) {
+        System.out.println("enter names of two students");
+        Scanner sc=new Scanner(System.in);
+        for(int i=0;i<2;i++){
+            String s=sc.next();
+        }
+        int s=0,s1=0;
+        System.out.println("enter the marks of students in three subjects");
+        try {
+            for(int i=0;i<3;i++) {
+                int a = Integer.parseInt((sc.next()));
+                if(a<0 || a>100)
+                    Invalid(a);
+                s=s+a;
+            }
+            System.out.println("average ="+s/3);
+            for(int i=0;i<3;i++) {
+                int b = Integer.parseInt((sc.next()));
+                if(b<0||b>100)
+                    Invalid(b);
+                s1=s1+b;
+            }
+            System.out.println("average="+s1/3);
+         }catch(NumberFormatException obj){
+            System.out.println("exception caught"+obj);
+        }
+        catch(MYException e){
+            System.out.println("My Exception caught");
+        }
+    }
+}
