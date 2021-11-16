@@ -1,3 +1,6 @@
+import javax.print.attribute.TextSyntax;
+import java.io.IOException;
+
 //Exception handling- mechanism to handle the runtime errors so that the normal flow of the application can be maintained.
 //without exception handling-
 /*
@@ -124,7 +127,7 @@ public class ExceptionH{
         }
     }
 }
-code is not correct.*/
+code is not correct.
 //q. enter the marks of student and caught the Number Format exception ,if comes, with try and catch block.Also create a custom exception
 //for handling the marks less than 0 and greater than 100.
 import java.util.Scanner;
@@ -166,5 +169,29 @@ public class ExceptionH{
         catch(MYException e){
             System.out.println("My Exception caught");
         }
+    }
+}*/
+//throws keyword -The Java throws keyword is used to declare an exception.
+// It gives an information to the programmer that there may occur an exception. only applicable on checked exception.
+class Testthrow{
+    void m()throws IOException{
+        throw new IOException("device error");
+    }
+    void p()throws IOException{
+        m();
+    }
+    void n(){
+        try{
+            p();
+        }catch(Exception e){
+            System.out.println("Exception handled");
+        }
+    }
+}
+public class ExceptionH{
+    public static void main(String[] args) {
+        Testthrow obj=new Testthrow();
+         obj.n();
+        System.out.println("end of main method");
     }
 }
