@@ -210,7 +210,7 @@ public class ExceptionH{
         obj.m1();
         System.out.println("hello");
     }
-}*/
+}
 //Try with resource concept-
 // try statement that declares one or more resources.
 import java.util.Scanner;
@@ -222,5 +222,18 @@ public class ExceptionH{
            obj.printStackTrace();
        }
         System.out.println("end of main method");
+    }
+}*/
+//Lambda expression
+//Lambda expression provides implementation of functional interface. An interface which has only one abstract method is called functional interface.
+//     Java provides an anotation @FunctionalInterface, which is used to declare an interface as functional interface.
+interface Drawable{
+     void draw();
+}
+public class ExceptionH{
+    public static void main(String[] args) {
+        int width=10;
+       Drawable obj=()-> System.out.println("Drawing "+width);
+       obj.draw();
     }
 }
