@@ -223,7 +223,7 @@ public class ExceptionH{
        }
         System.out.println("end of main method");
     }
-}*/
+}
 //Lambda expression
 //Lambda expression provides implementation of functional interface. An interface which has only one abstract method is called functional interface.
 //     Java provides an anotation @FunctionalInterface, which is used to declare an interface as functional interface.
@@ -235,5 +235,15 @@ public class ExceptionH{
         int width=10;
        Drawable obj=()-> System.out.println("Drawing "+width);
        obj.draw();
+    }
+}*/
+//lambda expression with no parameter.
+interface Sayable{
+     String say();
+}
+public class ExceptionH {
+    public static void main(String[] args) {
+        Sayable obj =()-> {return "hello";};
+        System.out.println(obj.say());
     }
 }
