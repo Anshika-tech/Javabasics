@@ -236,7 +236,7 @@ public class ExceptionH{
        Drawable obj=()-> System.out.println("Drawing "+width);
        obj.draw();
     }
-}*/
+}
 //lambda expression with no parameter.
 interface Sayable{
      String say();
@@ -245,5 +245,17 @@ public class ExceptionH {
     public static void main(String[] args) {
         Sayable obj =()-> {return "hello";};
         System.out.println(obj.say());
+    }
+}*/
+//lambda expression with single parameter
+interface Sayable{
+    String say(String s);
+}
+public class ExceptionH{
+    public static void main(String[] args) {
+        Sayable obj=(name)->{
+            return "hello "+name;
+        };
+        System.out.println(obj.say("Anshika"));
     }
 }
