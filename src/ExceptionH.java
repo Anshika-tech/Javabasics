@@ -246,7 +246,7 @@ public class ExceptionH {
         Sayable obj =()-> {return "hello";};
         System.out.println(obj.say());
     }
-}*/
+}
 //lambda expression with single parameter
 interface Sayable{
     String say(String s);
@@ -257,5 +257,17 @@ public class ExceptionH{
             return "hello "+name;
         };
         System.out.println(obj.say("Anshika"));
+    }
+}*/
+//lambda expression with Multiple parameter
+interface Addable{
+    int add(int a,int b);
+}
+public class ExceptionH{
+    public static void main(String[] args) {
+        Addable obj=(a,b)->(a+b);
+        System.out.println(obj.add(10,20));
+        Addable obj1=(int a,int b)->(a+b);
+        System.out.println(obj1.add(100,200));
     }
 }
