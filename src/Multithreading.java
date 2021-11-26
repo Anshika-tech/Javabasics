@@ -58,7 +58,7 @@ public class Multithreading{
         Test T1=new Test();
         T1.start();
     }
-}*/
+}
 //join()-The join() method in Java is provided by the java.lang.Thread class that permits one thread to wait
 //until the other thread to finish its execution.
 class Test extends Thread{
@@ -96,12 +96,34 @@ public class Multithreading{
             System.out.println("Exception is "+e);
         }
         T3.start();
-        /*try{
-            System.out.println("The current thread name is "+Thread.currentThread().getName());
-            T3.join();
+    }
+}
+*/
+//another example of join() method.
+class Test extends Thread{
+    public void run(){
+     for(int i=0;i<=5;i++){
+         try{
+             Thread.sleep(500);
+         }catch(Exception e){
+             System.out.println("Exception is"+e);
+         }
+         System.out.println(i);
+     }
+    }
+}
+public class Multithreading {
+    public static void main(String[] args) {
+        Test T1=new Test();
+        Test T2=new Test();
+        Test T3=new Test();
+        T1.start();
+        try{
+            T1.join();
         }catch(Exception e){
             System.out.println("Exception is "+e);
-        }*/
-
+        }
+        T2.start();
+        T3.start();
     }
 }
