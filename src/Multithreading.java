@@ -98,7 +98,7 @@ public class Multithreading{
         T3.start();
     }
 }
-*/
+
 //another example of join() method.
 class Test extends Thread{
     public void run(){
@@ -125,5 +125,46 @@ public class Multithreading {
         }
         T2.start();
         T3.start();
+    }
+}*/
+//Synchronisation concept.
+//Synchronisation in Java is the capability to control the access of multiple threads to any shared resource.
+class Table{
+    synchronized void print_table(int n){
+        for(int i=1;i<=5;i++){
+            System.out.println(n*i);
+        }
+        try{
+            Thread.sleep(400);
+        }catch(Exception e){
+            System.out.println("Exception is "+e);
+        }
+    }
+}
+class Thread1 extends Thread{
+    Table t;
+    Thread1(Table t){
+        this.t=t;
+    }
+    public void run(){
+        t.print_table(5);
+    }
+}
+class Thread2 extends Thread{
+    Table t;
+    Thread2(Table t){
+        this.t=t;
+    }
+    public void run(){
+        t.print_table(100);
+    }
+}
+class Multithreading{
+    public static void main(String[] args) {
+            Table obj=new Table();
+            Thread1 T1=new Thread1(obj);
+            Thread2 T2=new Thread2(obj);
+            T1.start();
+            T2.start();
     }
 }
