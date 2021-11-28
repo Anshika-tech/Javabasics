@@ -126,7 +126,7 @@ public class Multithreading {
         T2.start();
         T3.start();
     }
-}*/
+}
 //Synchronisation concept.
 //Synchronisation in Java is the capability to control the access of multiple threads to any shared resource.
 class Table{
@@ -166,5 +166,37 @@ class Multithreading{
             Thread2 T2=new Thread2(obj);
             T1.start();
             T2.start();
+    }
+}*/
+//example of synchronisation by using anonymous concept.
+class Table {
+    synchronized void Print_table(int n){
+        for(int i=1;i<=5;i++){
+            System.out.println(n*i);
+            try{
+                Thread.sleep(400);
+            }catch(Exception e){
+                System.out.println("Exception is "+e);
+            }
+        }
+    }
+}
+public class Multithreading{
+    public static void main(String[] args) {
+        final Table obj=new Table();
+       Thread T1=new Thread(new Runnable() {
+           @Override
+           public void run() {
+               obj.Print_table(5);
+           }
+       });
+        Thread T2=new Thread(new Runnable() {
+            @Override
+            public void run() {
+                obj.Print_table(100);
+            }
+        });
+        T1.start();
+        T2.start();
     }
 }
