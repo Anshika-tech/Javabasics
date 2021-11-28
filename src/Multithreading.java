@@ -167,7 +167,7 @@ class Multithreading{
             T1.start();
             T2.start();
     }
-}*/
+}
 //example of synchronisation by using anonymous concept.
 class Table {
     synchronized void Print_table(int n){
@@ -195,6 +195,47 @@ public class Multithreading{
             public void run() {
                 obj.Print_table(100);
             }
+        });
+        T1.start();
+        T2.start();
+    }
+}*/
+//create two thread,one thread print all even number between 1 and 20 followed by other thread
+// print all odd number between 1 and 20.
+class Test{
+    synchronized void print_odd(){
+        for(int i=1;i<=20;i++){
+            if(i%2==0){
+                try{
+                    Thread.sleep(500);
+                }catch(Exception e){
+                    System.out.println("Exception is"+e);
+                }
+                System.out.println(i);
+            }
+        }
+    }
+    synchronized void print_even(){
+        for(int i=1;i<=20;i++){
+            if(i%2!=0){
+                try{
+                    Thread.sleep(500);
+                }catch(Exception e){
+                    System.out.println("Exception is"+e);
+                }
+                System.out.println(i);
+            }
+        }
+    }
+}
+public class Multithreading{
+    public static void main(String[] args) {
+        Test obj=new Test();
+        Thread T1=new Thread(()->{
+            obj.print_even();
+        });
+        Thread T2=new Thread(()->{
+            obj.print_odd();
         });
         T1.start();
         T2.start();
