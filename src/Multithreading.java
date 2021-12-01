@@ -11,7 +11,6 @@
             System.out.println(obj.isDaemon());//It tests if the thread is a daemon thread.
         }
 }
-
 // two ways to create Thread
 //1. by extending Thread class
 class Test extends Thread{
@@ -240,7 +239,7 @@ public class Multithreading{
         T1.start();
         T2.start();
     }
-}*/
+}
 //Thread priority concept
 public class Multithreading extends Thread{
     public void run(){
@@ -264,4 +263,32 @@ public class Multithreading extends Thread{
         Thread.currentThread().setPriority(10);
         System.out.println("priority of main thread: "+Thread.currentThread().getPriority());
     }
+}*/
+//notify() and wait()
+class Test extends Thread{
+    int total=0;
+    public void run(){
+        synchronized(this){
+            for(int i=0;i<10;i++){
+                total=total+1;
+            }
+            this.notify();
+        }
+    }
 }
+public class Multithreading{
+    public static void main(String[] args) {
+        Test obj=new Test();
+        obj.start();
+        synchronized (obj){
+            try{
+                obj.wait();
+            }catch(InterruptedException e){
+                e.printStackTrace();
+            }
+            System.out.println(obj.total);
+        }
+    }
+}
+
+
