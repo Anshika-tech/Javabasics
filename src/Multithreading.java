@@ -199,7 +199,7 @@ public class Multithreading{
         T1.start();
         T2.start();
     }
-}*/
+}
 //create two thread,one thread print all even number between 1 and 20 followed by other thread
 // print all odd number between 1 and 20.
 class Test{
@@ -239,5 +239,29 @@ public class Multithreading{
         });
         T1.start();
         T2.start();
+    }
+}*/
+//Thread priority concept
+public class Multithreading extends Thread{
+    public void run(){
+        System.out.println("inside run method");
+    }
+    public static void main(String[] args) {
+     Multithreading T1=new Multithreading();
+     Multithreading T2=new Multithreading();
+     Multithreading T3=new Multithreading();
+        System.out.println("priority of thread T1 "+T1.getPriority());
+        System.out.println("priority of thread T2 "+T2.getPriority());
+        System.out.println("priority of thread T3 "+T3.getPriority());
+        T1.setPriority(6);
+        T2.setPriority(3);
+        T3.setPriority(9);
+        System.out.println("priority of thread T1 "+T1.getPriority());
+        System.out.println("priority of thread T2 "+T2.getPriority());
+        System.out.println("priority of thread T3 "+T3.getPriority());
+        System.out.println("currently executing the thread :"+Thread.currentThread().getName());
+        System.out.println("priority of main thread :"+Thread.currentThread().getPriority());
+        Thread.currentThread().setPriority(10);
+        System.out.println("priority of main thread: "+Thread.currentThread().getPriority());
     }
 }
